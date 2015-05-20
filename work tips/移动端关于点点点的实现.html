@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gbf"/>
+<title>多行文本溢出显示省略号</title>
+<style type="text/css">
+body{ font-family:微软雅黑;}
+
+h1{ font-weight: normal;}
+
+a{ color:#555; text-decoration: none;}
+a:hover{ color:#F33;}
+
+p{ margin:30px 10px; width:26em;}
+.wrap{ width:990px; margin-left:auto; margin-right:auto;}
+
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;/*css3新特性*/
+    text-overflow:-o-ellipsis-lastline;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;/*webkit扩展属性 不是W3C标准 限制行数*/
+    -webkit-box-orient: vertical;
+     height:4em;
+}
+</style>
+</head>
+<body>
+    <div class="wrap">
+    <h1><a href="http://www.iyunlu.com/view/">多行文本溢出显示省略号</a></h1>
+      <h2>只兼容 chrome，opera</h2>
+    <p class="ellipsis">
+      Gap官网 双十一狂欢节 购2件8折 3件7折 4件及以上6折，多买多划算，还有一淘返利。参加活动的包括女装、男装、女孩、男孩、女婴、男婴服饰。购4件及以上输入优惠代码0440享受6折。适合大家与朋友同事凑单购买，多买多划算。
+    </p>
+   </div>
+</body>
+</html>

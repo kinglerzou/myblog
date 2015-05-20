@@ -24,6 +24,7 @@ var EventUtil={
 			}
 	
 	},
+
 	getEvent:function(event)
 	{
 		return event?event:window.event;

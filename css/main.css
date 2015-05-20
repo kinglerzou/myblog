@@ -60,7 +60,8 @@ body{
 	   text-decoration:none
 	}
 	.banner li:hover{
-	  background:#05a;
+	  background:#5192e9;
+	  border-radius:1em;
 
 	}
 /*header end*/
@@ -68,17 +69,50 @@ body{
 
 
 /*main start*/
+
+   /*left*/
   .left{
-     width:70%;
+     width:80%;
 	 height:1000px;
   }
+  /*left end*/
+
+  /*right*/
   .right
   {
-    width:30%;
+    width:18%;
 	position:absolute;
 	background:#eef3fa;
-	height:500px
+	margin-top:1em;
   }
+  .linkhead{
+    background-color:#5192e9
+  }
+
+  .linkhead h3{
+    color:#fff;
+	font-size:1.5em;
+	margin-left:1em;
+  }
+  .linkbody{
+    margin-left:2em
+  }
+  .linkbody ul li{
+    font-size:1.4em;
+	padding:8px 0;
+	color:#fff
+  }
+  .linkbody ul li a{
+    text-decoration:none;
+	color:#333
+  }
+  .linkbody ul li a:hover{
+     color:#5192e9
+  }
+
+  /*right end*/
+
+
 /*main end*/
 
 

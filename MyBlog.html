@@ -1,111 +1,127 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="Author" content="kingler/zou">
-  <meta name="Keywords" content="front-end">
-  <meta name="Description" content="the technology of front-end">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-  <meta content="yes" name="apple-mobile-web-app-capable">
-  <meta content="black" name="apple-mobile-web-app-status-bar-style">
-  <meta content="telephone=no" name="format-detection">
-  <link rel="stylesheet" type="text/css" href="css/reset.css">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-  <title>Blog</title>
-  <style type="text/css">
-  </style>
- </head>
- <body class="kingler">
-  <div class="header">
-  <div class="logo">
-     <div class="info">
-   <a href="javscript:void(0)" class="display">
-    <img src="img/logo.png" alt="front-end" style="height:5em;"/>
-   </a>
-   <span>当前位置:<span><span class="city"></span>
-   </div>
-   <div class="theme">More Coding More Love</div>
-  </div>
-  <div class="banner">
-	<ul>
-		<li>
-		<a href="javascript:void(0)">技术分享</a>	 
-		</li>
-		<li><a href="javascript:void(0)">杂谈</a></li>
-	    <li><a href="javascript:void(0)">随笔</a></li>
-		<li><a href="javascript:void(0)">个人</a></li>
-	</ul>
-  </div>
-  </div>
-  
-  <div class="main">
-     <div class="left display">
-	 这里是博客主要类容
-	 </div>
-	 <div class="right display">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Author" content="kingler/zou">
+	<meta name="Keywords" content="front-end">
+	<meta name="Description" content="the technology of front-end">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<title>Blog</title>
+	<style type="text/css">
+	</style>
+</head>
+<body class="kingler">
+	<div class="header">
+		<div class="logo">
+			<div class="info">
+				<a href="javscript:void(0)" class="display">
+					<img src="img/logo.png" alt="front-end" style="height:5em;"/>
+				</a>
+				<span>当前位置:<span><span class="city"></span>
+			</div>
+			<div class="theme">More Coding More Love
+			</div>
+		</div>
+		<div class="banner">
+			<ul>
+				<li>
+					<a href="javascript:void(0)">技术分享</a>	 
+				</li>
+				<li>
+					<a href="javascript:void(0)">杂谈</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">随笔</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">个人</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+<div class="main">
+	<div class="left display">
+		这里是博客主要类容
+	</div>
+	<div class="right display">
+		<div class="linkother">
+			<div class="linkhead">
+				<h3>我的链接</h3>
+			</div>
+					<div class="linkbody">
+						<ul>
+							<li><a href="" title="微博" target="_blank">weibo</a></li>
+							<li><a href="" title="知乎" target="_blank">zhifu</a></li>
+							<li><a href="" title="慕课网" target="_blank">immoc</a></li>
+							<li><a href="" title="github" target="_blank">github</a></li>
+							<li><a href="" title="博客园" target="_blank">cnblogs</a></li>
+						</ul>
+					</div>
+		</div>
+	</div>
+</div>
 
-	 </div>
-  </div>
-  <div class="footer">
-  <p>底部</p>
-  </div>
- <a href="#top" class="u-backtop e-backtop-fixed">
- <span class="u-icon i-backtop">
- </span>
- </a> 
+		<div class="footer">
+			<p>底部</p>
+		</div>
+		<a href="#top" class="u-backtop e-backtop-fixed">
+			<span class="u-icon i-backtop">
+			</span>
+		</a> 
 
-  <script type="text/javascript" src="js/EventUtil.js"></script>
-  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=134db1b9cf1f1f2b4427210932b34dcb"></script>
-  <script type="text/javascript">
-  //导航栏随页面滚动事件
-   EventUtil.addHandler(window,"scroll",function(event){
-       var fixelement=document.getElementsByClassName("banner")[0],
-	       navTop=fixelement.offsetTop,
-		   scrollTop=document.body.scrollTop||document.documentElement.scrollTop,logoTop=66,claName=fixelement.className;
-		   if(scrollTop>(navTop-logoTop)){
-		       if(claName.indexOf(" fixed")<0){
-		       fixelement.className+=" fixed";
-			   }
-		   }
-		   if(scrollTop==0)
-	       {	
-		       fixelement.className=fixelement.className.replace(" fixed","");
-		   }
+		<script type="text/javascript" src="js/EventUtil.js"></script>
+		<script type="text/javascript" 
+		  src="http://api.map.baidu.com/api?v=2.0&ak=134db1b9cf1f1f2b4427210932b34dcb"></script>
+		<script type="text/javascript">
+		  //导航栏随页面滚动事件
+		  EventUtil.addHandler(window,"scroll",function(event){
+		  	var fixelement=document.getElementsByClassName("banner")[0],
+		  	navTop=fixelement.offsetTop,
+		  	scrollTop=document.body.scrollTop||document.documentElement.scrollTop,logoTop=66,claName=fixelement.className;
+		  	if(scrollTop>(navTop-logoTop)){
+		  		if(claName.indexOf(" fixed")<0){
+		  			fixelement.className+=" fixed";
+		  		}
+		  	}
+		  	if(scrollTop==0)
+		  	{	
+		  		fixelement.className=fixelement.className.replace(" fixed","");
+		  	}
 
 		  //backtop图标是否隐藏
-          var backtop=document.getElementsByClassName("u-backtop")[0];
+		  var backtop=document.getElementsByClassName("u-backtop")[0];
 		  var top = document.body.scrollTop | document.documentElement.scrollTop;
 		  var hei=document.documentElement.clientHeight;
 		  if(top>hei)
-	      {
-		    backtop.style.display="block";
+		  {
+		  	backtop.style.display="block";
 		  }
 		  else{
-		     backtop.style.display="none";
+		  	backtop.style.display="none";
 		  }
 
-   })
-
-   window.onload=function(){
-	   	// 百度地图API功能
-       //var map = new BMap.Map("map");
-	   //var point = new BMap.Point(116.331398,39.897445);
-	    //map.centerAndZoom(point,12);
-	    function myFun(result){
-		var cityName = result.name;
-		//map.setCenter(cityName);
-		//alert("当前定位城市:"+result);
-		//return cityName;
-		document.getElementsByClassName("city")[0].innerHTML=cityName;
-	}
-	var myCity = new BMap.LocalCity();
-	myCity.get(myFun);
-   
-
-
-
-   }
-
-  </script>
- </body>
+		})
+		  
+		  window.onload=function(){
+			   	// 百度地图API功能
+		       //var map = new BMap.Map("map");
+			   //var point = new BMap.Point(116.331398,39.897445);
+			    //map.centerAndZoom(point,12);
+			    function myFun(result){
+			    	var cityName = result.name;
+				//map.setCenter(cityName);
+				//alert("当前定位城市:"+result);
+				//return cityName;
+				document.getElementsByClassName("city")[0].innerHTML=cityName;
+			}
+			var myCity = new BMap.LocalCity();
+			myCity.get(myFun);
+		}
+</script>
+</body>
 </html>

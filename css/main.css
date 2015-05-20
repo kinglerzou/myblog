@@ -82,17 +82,43 @@ body{
   {
     width:18%;
 	position:absolute;
-	background:#eef3fa;
 	margin-top:1em;
+	
+  }
+  .personnal_info{
+     border-top:2px #5192e9 solid;
+     
+
+  }
+  .infos:after{
+	  content:"";
+	  display:block;
+	  clear:both;
+	  overflow:hidden;
+	  zoom:1
+  }
+  .avatar{
+     float:right;
+	 display:inline-block;
+	 margin:5px
+  }
+  .name{
+     font:italic 3em monospace
+  }
+  .linkother{
+    margin-top:1em
   }
   .linkhead{
     background-color:#5192e9
   }
-
-  .linkhead h3{
+.backcolor{
+   	background:#eef3fa;
+}
+  h1{
     color:#fff;
 	font-size:1.5em;
 	margin-left:1em;
+	padding:0.4em 0
   }
   .linkbody{
     margin-left:2em
@@ -155,7 +181,7 @@ body{
   background-position:-41px -71px
 }
 /*@media query start*/
-@media screen and (max-width:450px){
+@media screen and (max-width:480px){
     .right{
 	  display:none;
 	}

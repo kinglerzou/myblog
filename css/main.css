@@ -135,6 +135,14 @@ body{
   .linkbody ul li a:hover{
      color:#5192e9
   }
+  .linkbody ul li a:before{
+     content:"\f054";
+	 font-family:FontAwesome;
+	 font-style:normal;
+	 font-weight:normal;
+	 margin-right:5px
+
+  }
 
   /*right end*/
 
@@ -202,5 +210,15 @@ body{
 	top:0
 }
 
+@font-face {
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: normal;
+    src: url("fontAwesome/font/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), 
+		url("fontAwesome/font/fontawesome-webfont.woff") format("woff"), 
+		url("fontAwesome/font/fontawesome-webfont.ttf") format("truetype"), 
+		url("fontAwesome/font/fontawesome-webfont.svgz#FontAwesomeRegular") format("svg"), 
+		url("fontAwesome/font/fontawesome-webfont.svg#FontAwesomeRegular") format("svg");
+}
 
 /*common css  end*/

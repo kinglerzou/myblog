@@ -1,4 +1,5 @@
 /*hearder start*/
+
 body{
   min-width:320px;
 }
@@ -54,6 +55,8 @@ body{
 	.banner li:hover{
 	  background:red;
 	  border-radius:1em;
+	  opacity:0.5;
+	  filter:alpha(opacity=50)
 
 	}
     .banner li:active{
@@ -65,10 +68,11 @@ body{
 	.move_mark{
 	   background:red;
 	   height:3px;
-	   width:40%;
-	   margin-top:3em
+	   width:33px;
+	   margin-top:3em;
+	   margin-left:4%;
 	}
-::selection{
+   ::selection{
     background: #FDE6BA;
     color: #000;
     text-shadow: 3px 3px 3px #CCC;
@@ -78,7 +82,10 @@ body{
 
 
 /*main start*/
-
+    .main{
+	   margin-top:1em
+	
+	}
    /*left*/
   .left{
      width:80%;

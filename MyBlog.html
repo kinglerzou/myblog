@@ -12,8 +12,6 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<title>Blog</title>
-	<style type="text/css">
-	</style>
 </head>
 <body class="kingler">
 	<div class="header">
@@ -28,7 +26,7 @@
 			</div>
 		</div>
 		<div class="banner">
-			<ul>
+			<ul id="navigation">
 				<li>
 					<a href="">主页</a>	 
 				</li>
@@ -53,7 +51,7 @@
 
 	<div class="right display">
 		<div class="infos backcolor">
-			<p class="name">Kingler'blog</p>
+			<p class="name"><!--Kingler'blog-->kingler</p>
 			<div class="personnal_info">
 				<a href="javascript:void(0)" class="avatar">
 					<img src="img/avatar.png" alt="无法显示 F5" width="126" height="125"/>
@@ -92,36 +90,7 @@
 		<script type="text/javascript" 
 		  src="http://api.map.baidu.com/api?v=2.0&ak=134db1b9cf1f1f2b4427210932b34dcb"></script>
 		<script type="text/javascript">
-		  //导航栏随页面滚动事件
-		  EventUtil.addHandler(window,"scroll",function(event){
-		  	var fixelement=document.getElementsByClassName("banner")[0],
-		  	navTop=fixelement.offsetTop,
-		  	scrollTop=document.body.scrollTop||document.documentElement.scrollTop,logoTop=66,claName=fixelement.className;
-		  	if(scrollTop>(navTop-logoTop)){
-		  		if(claName.indexOf(" fixed")<0){
-		  			fixelement.className+=" fixed";
-		  		}
-		  	}
-		  	if(scrollTop==0)
-		  	{	
-		  		fixelement.className=fixelement.className.replace(" fixed","");
-		  	}
-
-		  //backtop图标是否隐藏
-		  var backtop=document.getElementsByClassName("u-backtop")[0];
-		  var top = document.body.scrollTop | document.documentElement.scrollTop;
-		  var hei=document.documentElement.clientHeight;
-		  if(top>hei)
-		  {
-		  	backtop.style.display="block";
-		  }
-		  else{
-		  	backtop.style.display="none";
-		  }
-
-		})
-
-		  window.onload=function(){
+	    window.onload=function(){
 			   	// 百度地图API功能
 		       //var map = new BMap.Map("map");
 			   //var point = new BMap.Point(116.331398,39.897445);
@@ -135,7 +104,59 @@
 			}
 			var myCity = new BMap.LocalCity();
 			myCity.get(myFun);
-		}
+}
+
+
+		      //导航栏随页面滚动事件
+			  EventUtil.addHandler(window,"scroll",function(event){
+			  	var fixelement=document.getElementsByClassName("banner")[0],
+			  	navTop=fixelement.offsetTop,
+			  	scrollTop=document.body.scrollTop||document.documentElement.scrollTop,logoTop=66,claName=fixelement.className;
+			  	if(scrollTop>(navTop-logoTop)){
+			  		if(claName.indexOf(" fixed")<0){
+			  			fixelement.className+=" fixed";
+			  		}
+			  	}
+			  	if(scrollTop==0)
+			  	{	
+			  		fixelement.className=fixelement.className.replace(" fixed","");
+			  	}
+
+			  //backtop图标是否隐藏
+			  var backtop=document.getElementsByClassName("u-backtop")[0];
+			  var top = document.body.scrollTop | document.documentElement.scrollTop;
+			  var hei=document.documentElement.clientHeight;
+			  if(top>hei)
+			  {
+			  	backtop.style.display="block";
+			  }
+			  else{
+			  	backtop.style.display="none";
+			  }
+
+			});
+           //监听导航栏li 改变下部承托条位置
+			var navi=document.getElementById("navigation");
+			var navili=document.querySelectorAll("#navigation li");
+			var movemark=document.getElementsByClassName("move_mark")[0];
+			EventUtil.addHandler(navi,"mouseover",function(){
+                 var event=event?event:window.event;
+                 var src=event.target||event.srcElement;
+                 		switch(src.innerText){
+                 			case "杂谈":
+                 			movemark.style.marginLeft="9.8%";
+                 			break;
+                 			case "随笔":
+                 			movemark.style.marginLeft="15.7%";
+                 			break;
+                 			case "个人":
+                 			movemark.style.marginLeft="21.6%";
+                 			break;
+                 			default:
+                 			movemark.style.marginLeft="4%";
+                 			break;
+                 		}
+			});	
 </script>
 </body>
 </html>

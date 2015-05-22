@@ -3,14 +3,13 @@ body{
   min-width:320px;
 }
   .banner{
-     background:#d6d4d4;
+     background:#5192e9;
 	 float:left;
 	 width:100%;
 	 height:3em
   }
   .banner ul{
 	   list-style-type:none;
-	   float:left;
 	   width:100%;
 	   line-height:3em
 	   
@@ -41,13 +40,6 @@ body{
 	.info{
 	   float:left
 	}
-	.main{
-	 
-	}
-	.footer
-	{
-	
-	}
 	.display{
 	  display:inline-block;
 	}
@@ -56,14 +48,31 @@ body{
 	   margin-top:4em
 	}
 	.banner li a{
-	   color:#000;
+	   color:#fff;
 	   text-decoration:none
 	}
 	.banner li:hover{
-	  background:#5192e9;
+	  background:red;
 	  border-radius:1em;
 
 	}
+    .banner li:active{
+	  background:red;
+	  border-radius:1em;
+
+	}
+
+	.move_mark{
+	   background:red;
+	   height:3px;
+	   width:40%;
+	   margin-top:3em
+	}
+::selection{
+    background: #FDE6BA;
+    color: #000;
+    text-shadow: 3px 3px 3px #CCC;
+}
 /*header end*/
 
 
@@ -103,7 +112,9 @@ body{
 	 margin:5px
   }
   .name{
-     font:italic 3em monospace
+     font:italic 3em monospace;
+	 background:#5192e9;
+	 color:#fff
   }
   .linkother{
     margin-top:1em

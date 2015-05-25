@@ -288,8 +288,21 @@
            });
         //load_more
         var loadMore=document.getElementsByClassName("load_more")[0];
+		var parent=document.getElementsByClassName("left")[0];
         EventUtil.addHandler(loadMore,"click",function(event){
-              alert(event);
+              var fragment=document.createDocumentFragment();
+
+			  for(var i=0;i<4;i++){
+				 var div=document.createElement("div");
+				 div.setAttribute("class","day");
+			      var html='<div class="day"><div class="time">2015年05月25日</div><div class="article_title"><a href="" class="title_link">mark jquery 链式调用的js原理</a></div>';
+                  html+='<div class="article_body">摘要: 我们在使用jquery的时候会用到类似$("#id").css("color","red").show(200); 这样写有点减少代码量，减少了逐步查询DOM的性能损耗；'; 
+				  html+='js 原理实现： function demo(){}demo.prototype={ first:function...</div><div class="article_end"></div></div>';
+				  div.innerHTML=html;
+				  fragment.appendChild(div);
+				 }
+				parent.appendChild(fragment);
+
         })
 
 

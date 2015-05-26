@@ -12,8 +12,7 @@ body{
   .banner ul{
 	   list-style-type:none;
 	   width:100%;
-	   line-height:3em
-	   
+	   line-height:3em   
 	}
 	.banner li {
 	  float:left;
@@ -56,15 +55,13 @@ body{
 	  background:red;
 	  border-radius:1em;
 	  opacity:0.5;
-	  filter:alpha(opacity=50)
-
+	  filter:alpha(opacity=80)
 	}
     .banner li:active{
 	  background:red;
 	  border-radius:1em;
 
 	}
-
 	.move_mark{
 	   background:red;
 	   height:3px;
@@ -79,17 +76,15 @@ body{
 }
 /*header end*/
 
-
-
 /*main start*/
     .main{
 	   margin-top:1em
-	
 	}
    /*left*/
   .left{
      width:80%;
-	 margin:0 1em
+	 margin:0 1em;
+	 position:relative
   }
   .day{
     margin-top:1em;
@@ -103,7 +98,11 @@ body{
   }
   .title_link{
      font-size:1.7em;
-	 text-decoration:none
+	 text-decoration:none;
+	 color:#d0d0d0
+  }
+  .title_link:hover{
+     text-decoration:none
   }
   .article_body{
      font-size:1.5em
@@ -112,10 +111,11 @@ body{
 
 
   .load_more{
-     width:5%;
-	 margin:1em auto;
 	 cursor:pointer;
-	 font-size:1.3em
+	 font-size:1.3em;
+	 position:absolute;
+	 left:50%;
+	 margin-top:1em
   }
     
 
@@ -202,6 +202,7 @@ body{
 /*footer start*/
   .footer{
      background:#f3f1f4;
+	 margin-top:3.5em
   }
   .link{
      margin:0 auto;
@@ -247,7 +248,7 @@ body{
   background-position:-41px -71px
 }
 /*@media query start*/
-@media screen and (max-width:480px){
+@media screen and (max-width:740px){
     .right{
 	  display:none;
 	}

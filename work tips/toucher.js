@@ -1,5 +1,5 @@
 /**
- * @author ¾çÖĞÈË
+ * @author å‰§ä¸­äºº
  * @github https://github.com/bh-lay/toucher
  * @modified 2015-3-7 01:02
  * 
@@ -7,33 +7,33 @@
 
  
 (function(global,doc,factoryFn){
-	//³õÊ¼»¯toucherÖ÷·½·¨
+	//åˆå§‹åŒ–toucherä¸»æ–¹æ³•
 	var factory = factoryFn(global,doc);
 	
-	//Ìá¹©window.util.toucher()½Ó¿Ú
+	//æä¾›window.util.toucher()æ¥å£
 	global.util = global.util || {};
 	global.util.toucher = global.util.toucher || factory;
 	
-	//Ìá¹©CommonJS¹æ·¶µÄ½Ó¿Ú
+	//æä¾›CommonJSè§„èŒƒçš„æ¥å£
 	global.define && define(function(require,exports,module){
-		//¶ÔÍâ½Ó¿Ú
+		//å¯¹å¤–æ¥å£
 		return factory;
 	});
 })(this,document,function(window,document){
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÓµÓĞÄ³¸öclass
+	 * åˆ¤æ–­æ˜¯å¦æ‹¥æœ‰æŸä¸ªclass
 	 */
 	function hasClass(dom,classSingle){
 		return dom.className.match(new RegExp('(\\s|^)' + classSingle +'(\\s|$)'));
 	}
 
 	/**
-	 * @method Ïò¾ä±úËùÔÚ¶ÔÏóÔö¼ÓÊÂ¼ş¼àÌı
-	 * @description Ö§³ÖÁ´Ê½µ÷ÓÃ
+	 * @method å‘å¥æŸ„æ‰€åœ¨å¯¹è±¡å¢åŠ äº‹ä»¶ç›‘å¬
+	 * @description æ”¯æŒé“¾å¼è°ƒç”¨
 	 * 
-	 * @param string ÊÂ¼şÃû
-	 * @param [string] ÊÂ¼şÎ¯ÍĞÖÁÄ³¸öclass£¨¿ÉÑ¡£©
-	 * @param function ·ûºÏÌõ¼şµÄÊÂ¼ş±»´¥·¢Ê±ĞèÒªÖ´ĞĞµÄ»Øµ÷º¯Êı 
+	 * @param string äº‹ä»¶å
+	 * @param [string] äº‹ä»¶å§”æ‰˜è‡³æŸä¸ªclassï¼ˆå¯é€‰ï¼‰
+	 * @param function ç¬¦åˆæ¡ä»¶çš„äº‹ä»¶è¢«è§¦å‘æ—¶éœ€è¦æ‰§è¡Œçš„å›è°ƒå‡½æ•° 
 	 * 
 	 */
 	function ON(eventStr,a,b){
@@ -46,13 +46,13 @@
 			className = null;
 			fn = a;
 		}
-		//¼ì²âcallbackÊÇ·ñºÏ·¨,ÊÂ¼şÃû²ÎÊıÊÇ·ñ´æÔÚ¡¤
+		//æ£€æµ‹callbackæ˜¯å¦åˆæ³•,äº‹ä»¶åå‚æ•°æ˜¯å¦å­˜åœ¨Â·
 		if(typeof(fn) == 'function' && eventStr && eventStr.length){
 			var eventNames = eventStr.split(/\s+/);
 			for(var i=0,total=eventNames.length;i<total;i++){
 			
 				var eventName = eventNames[i];
-				//ÊÂ¼ş¶ÑÎŞ¸ÃÊÂ¼ş£¬´´½¨Ò»¸öÊÂ¼ş¶Ñ
+				//äº‹ä»¶å †æ— è¯¥äº‹ä»¶ï¼Œåˆ›å»ºä¸€ä¸ªäº‹ä»¶å †
 				if(!this._events[eventName]){
 					this._events[eventName] = [];
 				}
@@ -63,40 +63,40 @@
 			}
 		}
 
-		//Ìá¹©Á´Ê½µ÷ÓÃµÄÖ§³Ö
+		//æä¾›é“¾å¼è°ƒç”¨çš„æ”¯æŒ
 		return this;
 	}
 
 	/**
-	 * @method ÊÂ¼ş´¥·¢Æ÷
-	 * @description ¸ù¾İÊÂ¼ş×îÔ­Ê¼±»´¥·¢µÄtarget£¬Öğ¼¶ÏòÉÏ×·ËİÊÂ¼ş°ó¶¨
+	 * @method äº‹ä»¶è§¦å‘å™¨
+	 * @description æ ¹æ®äº‹ä»¶æœ€åŸå§‹è¢«è§¦å‘çš„targetï¼Œé€çº§å‘ä¸Šè¿½æº¯äº‹ä»¶ç»‘å®š
 	 * 
-	 * @param string ÊÂ¼şÃû
-	 * @param object Ô­ÉúÊÂ¼ş¶ÔÏó
+	 * @param string äº‹ä»¶å
+	 * @param object åŸç”Ÿäº‹ä»¶å¯¹è±¡
 	 */
 	function EMIT(eventName,e){
 		this._events = this._events || {};
-		//ÊÂ¼ş¶ÑÎŞ¸ÃÊÂ¼ş£¬½áÊø´¥·¢
+		//äº‹ä»¶å †æ— è¯¥äº‹ä»¶ï¼Œç»“æŸè§¦å‘
 		if(!this._events[eventName]){
 			return
 		}
-		//¼ÇÂ¼ÉĞÎ´±»Ö´ĞĞµôµÄÊÂ¼ş°ó¶¨
+		//è®°å½•å°šæœªè¢«æ‰§è¡Œæ‰çš„äº‹ä»¶ç»‘å®š
 		var rest_events = this._events[eventName];
 		
-		//´ÓÊÂ¼şÔ´£ºtarget¿ªÊ¼ÏòÉÏÃ°Åİ
+		//ä»äº‹ä»¶æºï¼štargetå¼€å§‹å‘ä¸Šå†’æ³¡
 		var target = e.target;
 		while (1) {
-			//ÈôÃ»ÓĞĞèÒªÖ´ĞĞµÄÊÂ¼ş£¬½áÊøÃ°Åİ
+			//è‹¥æ²¡æœ‰éœ€è¦æ‰§è¡Œçš„äº‹ä»¶ï¼Œç»“æŸå†’æ³¡
 			if(rest_events.length ==0){
 				return;
 			}
-			//ÈôÒÑ¾­Ã°ÅİÖÁ¶¥£¬¼ì²â¶¥¼¶°ó¶¨£¬½áÊøÃ°Åİ
+			//è‹¥å·²ç»å†’æ³¡è‡³é¡¶ï¼Œæ£€æµ‹é¡¶çº§ç»‘å®šï¼Œç»“æŸå†’æ³¡
 			if(target == this.dom || !target){
-				//±éÀúÊ£ÓàËùÓĞÊÂ¼ş°ó¶¨
+				//éå†å‰©ä½™æ‰€æœ‰äº‹ä»¶ç»‘å®š
 				for(var i=0,total=rest_events.length;i<total;i++){
 					var classStr = rest_events[i]['className'];
 					var callback = rest_events[i]['fn'];
-					//Î´Ö¸¶¨ÊÂ¼şÎ¯ÍĞ£¬Ö±½ÓÖ´ĞĞ
+					//æœªæŒ‡å®šäº‹ä»¶å§”æ‰˜ï¼Œç›´æ¥æ‰§è¡Œ
 					if(classStr == null){
 						event_callback(eventName,callback,target,e);
 					}
@@ -104,37 +104,37 @@
 				return;
 			}
 			
-			//µ±Ç°ĞèÒªĞ£ÑéµÄÊÂ¼ş¼¯
+			//å½“å‰éœ€è¦æ ¡éªŒçš„äº‹ä»¶é›†
 			var eventsList = rest_events;
-			//ÖÃ¿ÕÉĞÎ´Ö´ĞĞµôµÄÊÂ¼ş¼¯
+			//ç½®ç©ºå°šæœªæ‰§è¡Œæ‰çš„äº‹ä»¶é›†
 			rest_events = [];
 
-			//±éÀúÊÂ¼şËùÓĞ°ó¶¨
+			//éå†äº‹ä»¶æ‰€æœ‰ç»‘å®š
 			for(var i=0,total=eventsList.length;i<total;i++){
 				var classStr = eventsList[i]['className'];
 				var callback = eventsList[i]['fn'];
-				//·ûºÏÊÂ¼şÎ¯ÍĞ£¬Ö´ĞĞ
+				//ç¬¦åˆäº‹ä»¶å§”æ‰˜ï¼Œæ‰§è¡Œ
 				if(hasClass(target,classStr)){
-					//·µ»ØfalseÍ£Ö¹ÊÂ¼şÃ°Åİ¼°ºóĞøÊÂ¼ş£¬ÆäÓà¼ÌĞøÖ´ĞĞ
+					//è¿”å›falseåœæ­¢äº‹ä»¶å†’æ³¡åŠåç»­äº‹ä»¶ï¼Œå…¶ä½™ç»§ç»­æ‰§è¡Œ
 					if(event_callback(eventName,callback,target,e) == false){
 						return
 					}
 				}else{
-					//²»·ûºÏÖ´ĞĞÌõ¼ş£¬Ñ¹»Øµ½ÉĞÎ´Ö´ĞĞµôµÄÁĞ±íÖĞ
+					//ä¸ç¬¦åˆæ‰§è¡Œæ¡ä»¶ï¼Œå‹å›åˆ°å°šæœªæ‰§è¡Œæ‰çš„åˆ—è¡¨ä¸­
 					rest_events.push(eventsList[i]);
 				}
 			}
-			//ÏòÉÏÃ°Åİ
+			//å‘ä¸Šå†’æ³¡
 			target = target.parentNode;
 		}
 	}
 	
 	/**
-	 * Ö´ĞĞ°ó¶¨µÄ»Øµ÷º¯Êı£¬²¢´´½¨Ò»¸öÊÂ¼ş¶ÔÏó
-	 * @param[string]ÊÂ¼şÃû
-	 * @param[function]±»Ö´ĞĞµôµÄº¯Êı
-	 * @param[object]Ö¸ÏòµÄdom
-	 * @param[object]Ô­Éúevent¶ÔÏó
+	 * æ‰§è¡Œç»‘å®šçš„å›è°ƒå‡½æ•°ï¼Œå¹¶åˆ›å»ºä¸€ä¸ªäº‹ä»¶å¯¹è±¡
+	 * @param[string]äº‹ä»¶å
+	 * @param[function]è¢«æ‰§è¡Œæ‰çš„å‡½æ•°
+	 * @param[object]æŒ‡å‘çš„dom
+	 * @param[object]åŸç”Ÿeventå¯¹è±¡
 	 */
 	function event_callback(name,fn,dom,e){
 		var touch = e.touches.length ? e.touches[0] : {};
@@ -145,7 +145,7 @@
 			'pageX' : touch.clientX || 0,
 			'pageY' : touch.clientY || 0
 		};
-		//ÎªswipeÊÂ¼şÔö¼Ó½»»¥³õÊ¼Î»ÖÃ¼°ÒÆ¶¯¾àÀë
+		//ä¸ºswipeäº‹ä»¶å¢åŠ äº¤äº’åˆå§‹ä½ç½®åŠç§»åŠ¨è·ç¦»
 		if(name.match(/^swipe/) && e.startPosition){
 			newE.startX = e.startPosition['pageX'],
 			newE.startY = e.startPosition['pageY'],
@@ -153,7 +153,7 @@
 			newE.moveY = newE.pageY - newE.startY
 		}
 		var call_result = fn.call(dom,newE);
-		//Èô°ó¶¨·½·¨·µ»Øfalse£¬×èÖ¹ä¯ÀÀÆ÷Ä¬ÈÏÊÂ¼ş
+		//è‹¥ç»‘å®šæ–¹æ³•è¿”å›falseï¼Œé˜»æ­¢æµè§ˆå™¨é»˜è®¤äº‹ä»¶
 		if(call_result == false){
 			e.preventDefault();
 			e.stopPropagation();
@@ -162,7 +162,7 @@
 		return call_result;
 	}
 	/**
-	 * ÅĞ¶Ïswipe·½Ïò
+	 * åˆ¤æ–­swipeæ–¹å‘
 	 */
 	function swipeDirection(x1, x2, y1, y2) {
 		return Math.abs(x1 - x2) >=
@@ -170,41 +170,41 @@
 	}
 
 	/**
-	 * ¼àÌıÔ­ÉúµÄÊÂ¼ş£¬Ö÷¶¯´¥·¢Ä£ÄâÊÂ¼ş
+	 * ç›‘å¬åŸç”Ÿçš„äº‹ä»¶ï¼Œä¸»åŠ¨è§¦å‘æ¨¡æ‹Ÿäº‹ä»¶
 	 * 
 	 */
 	function eventListener(DOM){
 		var this_touch = this;
 
-		//Çá»÷¿ªÊ¼Ê±¼ä
+		//è½»å‡»å¼€å§‹æ—¶é—´
 		var touchStartTime = 0;
 		
-		//¼ÇÂ¼ÉÏÒ»´Îµã»÷Ê±¼ä
+		//è®°å½•ä¸Šä¸€æ¬¡ç‚¹å‡»æ—¶é—´
 		var lastTouchTime = 0;
 		
-		//¼ÇÂ¼³õÊ¼Çá»÷µÄÎ»ÖÃ
+		//è®°å½•åˆå§‹è½»å‡»çš„ä½ç½®
 		var x1,y1,x2,y2;
 		
-		//Çá»÷ÊÂ¼şµÄÑÓÊ±Æ÷
+		//è½»å‡»äº‹ä»¶çš„å»¶æ—¶å™¨
 		var touchDelay;
 		
-		//²âÊÔ³¤°´ÊÂ¼şµÄÑÓÊ±Æ÷
+		//æµ‹è¯•é•¿æŒ‰äº‹ä»¶çš„å»¶æ—¶å™¨
 		var longTap;
 		
-		//¼ÇÂ¼µ±Ç°ÊÂ¼şÊÇ·ñÒÑÎªµÈ´ı½áÊøµÄ×´Ì¬
+		//è®°å½•å½“å‰äº‹ä»¶æ˜¯å¦å·²ä¸ºç­‰å¾…ç»“æŸçš„çŠ¶æ€
 		var isActive = false;
-		//¼ÇÂ¼ÓĞ×ø±êĞÅÏ¢µÄÊÂ¼ş
+		//è®°å½•æœ‰åæ ‡ä¿¡æ¯çš„äº‹ä»¶
 		var eventMark = null;
-		//µ¥´ÎÓÃ»§²Ù×÷½áÊø
+		//å•æ¬¡ç”¨æˆ·æ“ä½œç»“æŸ
 		function actionOver(e){
 			isActive = false;
 			clearTimeout(longTap);
 			clearTimeout(touchDelay);
 		}
 		
-		//´¥ÆÁ¿ªÊ¼
+		//è§¦å±å¼€å§‹
 		function touchStart(e){
-			//»º´æÊÂ¼ş
+			//ç¼“å­˜äº‹ä»¶
 			eventMark = e;
 		
 			x1 = e.touches[0].pageX;
@@ -214,17 +214,17 @@
 			isActive = true;
 			touchStartTime = new Date();
 			EMIT.call(this_touch,'swipeStart',e);
-			//¼ì²âÊÇ·ñÎª³¤°´
+			//æ£€æµ‹æ˜¯å¦ä¸ºé•¿æŒ‰
 			clearTimeout(longTap);
 			longTap = setTimeout(function(){
 				actionOver(e);
-				//¶Ï¶¨´Ë´ÎÊÂ¼şÎª³¤°´ÊÂ¼ş
+				//æ–­å®šæ­¤æ¬¡äº‹ä»¶ä¸ºé•¿æŒ‰äº‹ä»¶
 				EMIT.call(this_touch,'longTap',e);
 			},500);
 		}
-		//´¥ÆÁ½áÊø
+		//è§¦å±ç»“æŸ
 		function touchend(e){
-			//touchendÖĞ£¬ÄÃ²»µ½×ø±êÎ»ÖÃĞÅÏ¢£¬¹ÊÊ¹ÓÃÈ«¾Ö±£´æÏÂµÄÊÂ¼ş
+			//touchendä¸­ï¼Œæ‹¿ä¸åˆ°åæ ‡ä½ç½®ä¿¡æ¯ï¼Œæ•…ä½¿ç”¨å…¨å±€ä¿å­˜ä¸‹çš„äº‹ä»¶
 			EMIT.call(this_touch,'swipeEnd',eventMark);
 			if(!isActive){
 				return
@@ -232,29 +232,29 @@
 			var now = new Date();
 			if(now - lastTouchTime > 260){
 				touchDelay = setTimeout(function(){
-					//¶Ï¶¨´Ë´ÎÊÂ¼şÎªÇá»÷ÊÂ¼ş
+					//æ–­å®šæ­¤æ¬¡äº‹ä»¶ä¸ºè½»å‡»äº‹ä»¶
 					actionOver();
 					EMIT.call(this_touch,'singleTap',eventMark);
 				},250);
 			}else{
 				clearTimeout(touchDelay);
 				actionOver(e);
-				//¶Ï¶¨´Ë´ÎÊÂ¼şÎªÁ¬ĞøÁ½´ÎÇá»÷ÊÂ¼ş
+				//æ–­å®šæ­¤æ¬¡äº‹ä»¶ä¸ºè¿ç»­ä¸¤æ¬¡è½»å‡»äº‹ä»¶
 				EMIT.call(this_touch,'doubleTap',eventMark);
 			}
 			lastTouchTime = now;
 		}
 		
-		//ÊÖÖ¸ÒÆ¶¯
+		//æ‰‹æŒ‡ç§»åŠ¨
 		function touchmove(e){
-			//»º´æÊÂ¼ş
+			//ç¼“å­˜äº‹ä»¶
 			eventMark = e;
-			//ÔÚÔ­ÉúÊÂ¼ş»ù´¡ÉÏ¼ÇÂ¼³õÊ¼Î»ÖÃ£¨ÎªswipeÊÂ¼şÔö¼Ó²ÎÊı´«µİ£©
+			//åœ¨åŸç”Ÿäº‹ä»¶åŸºç¡€ä¸Šè®°å½•åˆå§‹ä½ç½®ï¼ˆä¸ºswipeäº‹ä»¶å¢åŠ å‚æ•°ä¼ é€’ï¼‰
 			e.startPosition = {
 				pageX : x1,
 				pageY : y1
 			};
-			//¶Ï¶¨´Ë´ÎÊÂ¼şÎªÒÆ¶¯ÊÂ¼ş
+			//æ–­å®šæ­¤æ¬¡äº‹ä»¶ä¸ºç§»åŠ¨äº‹ä»¶
 			EMIT.call(this_touch,'swipe',e);
 
 			if(!isActive){
@@ -263,11 +263,11 @@
   	  x2 = e.touches[0].pageX
       y2 = e.touches[0].pageY
 			if(Math.abs(x1-x2)>2 || Math.abs(y1-y2)>2){
-				//¶Ï¶¨´Ë´ÎÊÂ¼şÎªÒÆ¶¯ÊÖÊÆ
+				//æ–­å®šæ­¤æ¬¡äº‹ä»¶ä¸ºç§»åŠ¨æ‰‹åŠ¿
 				var direction = swipeDirection(x1, x2, y1, y2);
 				EMIT.call(this_touch,'swipe' + direction,e);
 			}else{
-				//¶Ï¶¨´Ë´ÎÊÂ¼şÎªÇá»÷ÊÂ¼ş
+				//æ–­å®šæ­¤æ¬¡äº‹ä»¶ä¸ºè½»å‡»äº‹ä»¶
 				actionOver(e);
 				EMIT.call(this_touch,'singleTap',e);
 			}
@@ -275,28 +275,28 @@
 		}
 
 		/**
-		 * ¶Ô¿ªÊ¼ÊÖÊÆµÄ¼àÌı
+		 * å¯¹å¼€å§‹æ‰‹åŠ¿çš„ç›‘å¬
 		 */
 		DOM.addEventListener('touchstart',touchStart);
 		DOM.addEventListener('MSPointerDown',touchStart);
 		DOM.addEventListener('pointerdown',touchStart);
 
 		/**
-		 * ¶ÔÊÖÊÆ½áÊøµÄ¼àÌı£¨Çá»÷£©
+		 * å¯¹æ‰‹åŠ¿ç»“æŸçš„ç›‘å¬ï¼ˆè½»å‡»ï¼‰
 		 */
 		DOM.addEventListener('touchend',touchend);
 		DOM.addEventListener('MSPointerUp',touchend);
 		DOM.addEventListener('pointerup',touchend);
 
 		/**
-		 * ¶ÔÒÆ¶¯ÊÖÊÆµÄ¼àÌı
+		 * å¯¹ç§»åŠ¨æ‰‹åŠ¿çš„ç›‘å¬
 		 */
 		DOM.addEventListener('touchmove',touchmove);
 		DOM.addEventListener('MSPointerMove',touchmove);
 		DOM.addEventListener('pointermove',touchmove);
 
 		/**
-		 * ¶ÔÒÆ¶¯½áÊøµÄ¼àÌı
+		 * å¯¹ç§»åŠ¨ç»“æŸçš„ç›‘å¬
 		 */
 		DOM.addEventListener('touchcancel',actionOver);
 		DOM.addEventListener('MSPointerCancel',actionOver);
@@ -304,20 +304,20 @@
 	}
 	
 	/**
-	 * touchÀà
+	 * touchç±»
 	 * 
 	 */
 	function touch(DOM,param){
 		var param = param || {};
 
 		this.dom = DOM;
-		//¼àÌıDOMÔ­ÉúÊÂ¼ş
+		//ç›‘å¬DOMåŸç”Ÿäº‹ä»¶
 		eventListener.call(this,this.dom);
 	}
-	//ÍØÕ¹ÊÂ¼ş°ó¶¨·½·¨
+	//æ‹“å±•äº‹ä»¶ç»‘å®šæ–¹æ³•
 	touch.prototype['on'] = ON;
 	
-	//¶ÔÍâÌá¹©½Ó¿Ú
+	//å¯¹å¤–æä¾›æ¥å£
 	return function (dom){
 		return new touch(dom);
 	};

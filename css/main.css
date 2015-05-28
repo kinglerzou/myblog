@@ -271,6 +271,9 @@ body{
 	.logo{
 	 padding:0
 	}
+	.footer{
+	 display:none;
+	}
 }
 /*@media query end*/
 

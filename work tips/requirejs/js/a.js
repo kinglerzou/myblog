@@ -4,4 +4,4 @@ define(function(){
     }
 
     fun1();
-})
+})//define ∂®“Â

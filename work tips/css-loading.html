@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>CSS3-Loading动画</title>
+<style>
+#bowlG{
+position:relative;
+width:128px;
+height:128px;
+}
+#bowl_ringG{
+position:absolute;
+width:128px;
+height:128px;
+border:11px solid #000000;
+-moz-border-radius:128px;
+-webkit-border-radius:128px;
+border-radius:128px;
+}
+.ball_holderG{
+position:absolute;
+width:34px;
+height:128px;
+left:47px;
+top:0px;
+-webkit-animation-name:ball_moveG;
+-webkit-animation-duration:2s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-timing-function:linear;
+-moz-animation-name:ball_moveG;
+-moz-animation-duration:2s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-timing-function:linear;
+-o-animation-name:ball_moveG;
+-o-animation-duration:2s;
+-o-animation-iteration-count:infinite;
+-o-animation-timing-function:linear;
+-ms-animation-name:ball_moveG;
+-ms-animation-duration:2s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-timing-function:linear;
+}
+.ballG{
+position:absolute;
+left:0px;
+top:-30px;
+width:51px;
+height:51px;
+background:#FFFFFF;
+-moz-border-radius:43px;
+-webkit-border-radius:43px;
+border-radius:43px;
+}
+@-webkit-keyframes ball_moveG{
+0%{
+-webkit-transform:rotate(0deg)}
+100%{
+-webkit-transform:rotate(360deg)}
+}
+@-moz-keyframes ball_moveG{
+0%{
+-moz-transform:rotate(0deg)}
+100%{
+-moz-transform:rotate(360deg)}
+}
+@-o-keyframes ball_moveG{
+0%{
+-o-transform:rotate(0deg)}
+100%{
+-o-transform:rotate(360deg)}
+}
+@-ms-keyframes ball_moveG{
+0%{
+-ms-transform:rotate(0deg)}
+100%{
+-ms-transform:rotate(360deg)}
+}
+</style>
+</head>
+<body>
+<div id="bowlG">
+<div id="bowl_ringG">
+<div class="ball_holderG">
+<div class="ballG"></div>
+</div>
+</div>
+</div>
+</body>
+</html>

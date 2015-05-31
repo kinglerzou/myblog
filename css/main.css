@@ -93,16 +93,17 @@ body{
   }   
   
   .time{
-     background:rgba(0,0,0,.3);
+     background:#67BAD6;
 	 font-size:2em;
 	 color:white;
 	 padding:0 5px;
-	 border-radius:10px
+	 border-radius:10px;
+	 opacity:.7
   }
   .title_link{
      font-size:1.7em;
 	 text-decoration:none;
-	 color:#d0d0d0
+	 color:#67BAD6
   }
   .title_link:hover{
      text-decoration:none
@@ -129,7 +130,7 @@ body{
   /*right*/
   .right
   {
-    width:18%;
+    width:25%;
 	position:absolute;
 	margin-top:1em;
 	
@@ -191,6 +192,13 @@ body{
 	 font-weight:normal;
 	 margin-right:5px
 
+  }
+  .personnal_info p{
+    font:1.5em Arial;
+	word-wrap:break-word;
+	margin:5px;
+	color:#67BAD6;
+	opacity:.6
   }
 
   /*right end*/

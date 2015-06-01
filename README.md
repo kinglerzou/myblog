@@ -11,12 +11,10 @@
    > 日常遇到的并解决的小tips记录;
    > 日常看到好的代码摘抄及理解；
    
-   > 它既是博客源码，也是博客；hhhhhhhhhh~\<br/\>
+   >hhhhhhhhhh~\<br/\>
 
 
-
-
-                               *more coding more love*
+   *more coding more love*
 
 
 

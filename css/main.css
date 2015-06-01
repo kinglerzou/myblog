@@ -211,7 +211,8 @@ body{
 /*footer start*/
   .footer{
      background:#f3f1f4;
-	 margin-top:3.5em
+	 margin-top:3.5em;
+	 height:5em
   }
   .link{
 /*      margin:0 auto;
@@ -225,7 +226,8 @@ body{
        	 width:20%;
        	 padding:1em */
        float:left;
-	   margin-left:50%
+	   margin-left:50%;
+	   line-height:5em
   } 
   .footer:after{
      clear:both;

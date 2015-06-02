@@ -52,8 +52,8 @@ body{
 	   text-decoration:none
 	}
 	.banner li:hover{
-	  background:red;
-	  border-radius:1em;
+	  background:#f45145;
+	  /* border-radius:1em; */
 	  opacity:0.5;
 	  filter:alpha(opacity=80)
 	}

@@ -63,11 +63,11 @@ body{
 
 	}
 	.move_mark{
-	   background:red;
+	   background:#f45145;
 	   height:3px;
-	   width:33px;
+	   /* width:33px; */
 	   margin-top:3em;
-	   margin-left:4%;
+	   /* margin-left:4%; */
 	}
    ::selection{
     background: #FDE6BA;
@@ -186,12 +186,23 @@ body{
      color:#5192e9
   }
   .linkbody ul li a:before{
-     content:"\f054";
 	 font-family:FontAwesome;
 	 font-style:normal;
 	 font-weight:normal;
 	 margin-right:5px
 
+  }
+  .github:before{
+     content:"\f092";
+  }
+  .weibo:before{
+    content:"\f06e";
+  }
+  .zhihu:before{
+    content:"\f076";
+  }
+  .cnblogs:before{
+     content:"\f086"; 
   }
   .personnal_info p{
     font:1.5em Arial;
@@ -226,7 +237,7 @@ body{
        	 width:20%;
        	 padding:1em */
        float:left;
-	   margin-left:50%;
+	   margin-left:40%;
 	   line-height:5em
   } 
   .footer:after{

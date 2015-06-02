@@ -11,7 +11,7 @@
 	<meta content="telephone=no" name="format-detection">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<title>Blog</title>
+	<title>kingler's blog|代码改变世界</title>
 </head>
 <body class="kingler">
 	<div class="header">
@@ -40,7 +40,7 @@
 					<a href="javascript:void(0)">个人</a>
 				</li>
 			</ul>
-			<div class="move_mark"></div>
+			
 		</div>
 	</div>
 	<div class="main">
@@ -238,14 +238,19 @@
 		      	var fixelement=document.getElementsByClassName("banner")[0],
 		      	navTop=fixelement.offsetTop,
 		      	scrollTop=document.body.scrollTop||document.documentElement.scrollTop,logoTop=66,claName=fixelement.className;
+				var addLine=document.getElementById("navigation");
 		      	if(scrollTop>(navTop-logoTop)){
 		      		if(claName.indexOf(" fixed")<0){
 		      			fixelement.className+=" fixed";
+						var nodeOra=document.createElement("div");
+						 nodeOra.setAttribute("class","move_remark");
+						EventUtil.insertAfter(nodeOra,addLine);
 		      		}
 		      	}
 		      	if(scrollTop==0)
 		      	{	
 		      		fixelement.className=fixelement.className.replace(" fixed","");
+					fixelement.removeChild(document.getElementsByClassName("move_remark")[0]);
 		      	}
 
 			  //backtop图标是否隐藏

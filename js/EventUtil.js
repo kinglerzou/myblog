@@ -1,4 +1,4 @@
-//¿çä¯ÀÀÆ÷µÄÊÂ¼ş
+//è·¨æµè§ˆå™¨çš„äº‹ä»¶
 var EventUtil={
     addHandler:function(element,type,handler){
 	   if(element.addEventListener){
@@ -49,5 +49,13 @@ var EventUtil={
 		   else{
 		      event.returnValue=false;
 		   }
+	},
+	insertAfter:function(newElement,targetElement){
+             var parent=targetElement.parentNode;
+             if(parent.lastChild==targetElement){
+             	parent.appendChild(newElement);
+             }else{
+             	parent.insertBefore(newElement,targetElement.nextSibling);
+             }
 	}
 }

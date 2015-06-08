@@ -54,8 +54,8 @@ body{
 	.banner li:hover{
 	  background:#f45145;
 	  /* border-radius:1em; */
-	  opacity:0.5;
-	  filter:alpha(opacity=80)
+/* 	  opacity:0.5;
+	  filter:alpha(opacity=80) */
 	}
     .banner li:active{
 	  background:red;
@@ -89,7 +89,6 @@ body{
   }
   .day{
     margin-top:1em;
-
   }   
   
   .time{
@@ -97,7 +96,7 @@ body{
 	 font-size:2em;
 	 color:white;
 	 padding:0 5px;
-	 border-radius:10px;
+	 border-radius:6px;
 	 opacity:.7
   }
   .title_link{
@@ -112,8 +111,21 @@ body{
      font-size:1.5em
   }
 
-
-
+ .more{
+   	 font-family:FontAwesome;
+	 font-style:normal;
+	 font-weight:normal;
+	 font-size:.9em;
+	 text-decoration:none;
+	 color:#5192e9
+ }
+ .more:before{
+    content:"\f04e";
+	margin-right:4px
+ }
+ more:hover{
+   color:
+ }
   .load_more{
 	 cursor:pointer;
 	 font-size:1.3em;
@@ -209,7 +221,10 @@ body{
 	word-wrap:break-word;
 	margin:5px;
 	color:#67BAD6;
-	opacity:.6
+	opacity:.6;
+  }
+  .texten{
+   text-indent:10px
   }
 
   /*right end*/

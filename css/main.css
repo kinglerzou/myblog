@@ -97,7 +97,8 @@ body{
 	 color:white;
 	 padding:0 5px;
 	 border-radius:6px;
-	 opacity:.7
+	 opacity:.7;
+	 box-shadow:0 0 2px #67BAD6
   }
   .title_link{
      font-size:1.7em;
@@ -225,6 +226,9 @@ body{
   }
   .texten{
    text-indent:10px
+  }
+  .shadow{
+   box-shadow:0 0 1px #5192e9;
   }
 
   /*right end*/

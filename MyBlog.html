@@ -25,7 +25,7 @@
 			<div class="theme">More Coding More Love
 			</div>
 		</div>
-		<div class="banner">
+		<div class="banner shadow">
 			<ul id="navigation">
 				<li>
 					<a href="main.html">主页</a>	 
@@ -184,7 +184,7 @@
 
 		<div class="right display">
 			<div class="infos backcolor">
-				<p class="name"><!--Kingler'blog-->kingler</p>
+				<p class="name shadow"><!--Kingler'blog-->kingler</p>
 				<div class="personnal_info">
 					<a href="javascript:void(0)" class="avatar">
 						<img src="img/avatar.png" alt="无法显示 F5" width="126" height="125"/>
@@ -196,7 +196,7 @@
 			</div>
 
 			<div class="linkother backcolor">
-				<div class="linkhead">
+				<div class="linkhead shadow">
 					<h1>我的链接</h1>
 				</div>
 				<div class="linkbody">
@@ -260,8 +260,11 @@
 		      	}
 		      	if(scrollTop==0)
 		      	{	
+					var moveremark=document.getElementsByClassName("move_remark")[0];
 		      		fixelement.className=fixelement.className.replace(" fixed","");
-					fixelement.removeChild(document.getElementsByClassName("move_remark")[0]);
+					if(moveremark){
+					fixelement.removeChild(moveremark);
+					}
 		      	}
 
 			  //backtop图标是否隐藏

@@ -314,6 +314,9 @@ body{
 	.footer{
 	 display:none;
 	}
+	.main{
+	 width:100%
+	}
 }
 /*@media query end*/
 

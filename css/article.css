@@ -1,0 +1,10 @@
+.article_right{
+  float:right;
+}
+.article_left{
+float:left;	
+}
+.article:after{
+  content:"";
+  clear:both;
+}

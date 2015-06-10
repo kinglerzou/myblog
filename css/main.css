@@ -287,7 +287,16 @@ body{
        float:left;
 	   margin-left:40%;
 	   line-height:5em
-  } 
+  }
+  .flogo{
+   margin-left:1em;
+   margin-top:1em;
+   float:left;
+   line-height:5em
+  }
+  .flogo:hover{
+     margin-left:1.5em
+  }
   .footer:after{
      clear:both;
 	 content:"";

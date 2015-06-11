@@ -1,12 +1,12 @@
 window.onload=function(){
-			   	// °Ù¶ÈµØÍ¼API¹¦ÄÜ
+			   	// ç™¾åº¦åœ°å›¾APIåŠŸèƒ½
 		       //var map = new BMap.Map("map");
 			   //var point = new BMap.Point(116.331398,39.897445);
 			    //map.centerAndZoom(point,12);
 			    function myFun(result){
 			    	var cityName = result.name;
 				//map.setCenter(cityName);
-				//alert("µ±Ç°¶¨Î»³ÇÊĞ:"+result);
+				//alert("å½“å‰å®šä½åŸå¸‚:"+result);
 				//return cityName;
 				document.getElementsByClassName("city")[0].innerHTML=cityName;
 			}
@@ -15,12 +15,10 @@ window.onload=function(){
 
 			  	             if(window.console&&window.console.log) {
                 console.log(
-                	"»¶Ó­²ÈµãÎÒµÄ²©¿Í£¬ÎÒ¾õµÃ±à³ÌÊÇÒ»¼ş·Ç³£Óä¿ìµÄÊÂÇé£¬more coding more love\n github:https://github.com/kingzou");
+                	"æ¬¢è¿è¸©ç‚¹æˆ‘çš„åšå®¢ï¼Œæˆ‘è§‰å¾—ç¼–ç¨‹æ˜¯ä¸€ä»¶éå¸¸æ„‰å¿«çš„äº‹æƒ…ï¼Œmore coding more love\n github:https://github.com/kingzou");
             }
 		}
-
-
-		      //µ¼º½À¸ËæÒ³Ãæ¹ö¶¯ÊÂ¼ş
+		      //å¯¼èˆªæ éšé¡µé¢æ»šåŠ¨äº‹ä»¶
 		      EventUtil.addHandler(window,"scroll",function(event){
 		      	var fixelement=document.getElementsByClassName("banner")[0],
 		      	navTop=fixelement.offsetTop,
@@ -43,7 +41,7 @@ window.onload=function(){
 					}
 		      	}
 
-			  //backtopÍ¼±êÊÇ·ñÒş²Ø
+			  //backtopå›¾æ ‡æ˜¯å¦éšè—
 			  var backtop=document.getElementsByClassName("u-backtop")[0];
 			  var top = document.body.scrollTop | document.documentElement.scrollTop;
 			  var hei=document.documentElement.clientHeight;
@@ -56,40 +54,41 @@ window.onload=function(){
 			  }
 
 			});
-           //¼àÌıµ¼º½À¸li ¸Ä±äÏÂ²¿³ĞÍĞÌõÎ»ÖÃ
-           var navi=document.getElementById("navigation");
-           var navili=document.querySelectorAll("#navigation li");
-           var movemark=document.getElementsByClassName("move_mark")[0];
-           EventUtil.addHandler(navi,"mouseover",function(event){
-           	var event=event?event:window.event;
-           	var src=event.target||event.srcElement;
-           	// switch(src.innerText){
-           	// 	case "ÔÓÌ¸":
-           	// 	movemark.style.marginLeft="9.8%";
-           	// 	break;
-           	// 	case "Ëæ±Ê":
-           	// 	movemark.style.marginLeft="15.7%";
-           	// 	break;
-           	// 	case "¸öÈË":
-           	// 	movemark.style.marginLeft="21.6%";
-           	// 	break;
-           	// 	default:
-           	// 	movemark.style.marginLeft="4%";
-           	// 	break;
-           	// }
-           });
+           //ç›‘å¬å¯¼èˆªæ li æ”¹å˜ä¸‹éƒ¨æ‰¿æ‰˜æ¡ä½ç½®
+           // var navi=document.getElementById("navigation");
+           // var navili=document.querySelectorAll("#navigation li");
+           // var movemark=document.getElementsByClassName("move_mark")[0];
+           // EventUtil.addHandler(navi,"mouseover",function(event){
+           // 	var event=event?event:window.event;
+           // 	var src=event.target||event.srcElement;
+           // 	switch(src.innerText){
+           // 		case "æ‚è°ˆ":
+           // 		movemark.style.marginLeft="9.8%";
+           // 		break;
+           // 		case "éšç¬”":
+           // 		movemark.style.marginLeft="15.7%";
+           // 		break;
+           // 		case "ä¸ªäºº":
+           // 		movemark.style.marginLeft="21.6%";
+           // 		break;
+           // 		default:
+           // 		movemark.style.marginLeft="4%";
+           // 		break;
+           // 	}
+           // });
         //load_more
         var loadMore=document.getElementsByClassName("load_more")[0];
 		var parent=document.getElementsByClassName("left")[0];
+		if(loadMore&&parent){
         EventUtil.addHandler(loadMore,"click",function(event){
               var fragment=document.createDocumentFragment();
 
 			  for(var i=0;i<4;i++){
 				 var div=document.createElement("div");
 				 div.setAttribute("class","day");
-			      var html='<div class="time"><a href="" class="title_link">mark jquery Á´Ê½µ÷ÓÃµÄjsÔ­Àí</a><div><span class="wtime newfont">2015/01/01</span><span class="mark newfont">javascript,html</span></div></div>';
-                  html+='<div class="article_body">ÕªÒª: ÎÒÃÇÔÚÊ¹ÓÃjqueryµÄÊ±ºò»áÓÃµ½ÀàËÆ$("#id").css("color","red").show(200); ÕâÑùĞ´ÓĞµã¼õÉÙ´úÂëÁ¿£¬¼õÉÙÁËÖğ²½²éÑ¯DOMµÄĞÔÄÜËğºÄ£»'; 
-				  html+='js Ô­ÀíÊµÏÖ£º function demo(){}demo.prototype={ first:function...<a href="#" class="more" title="²é¿´¸ü¶à">more</a></div><div class="article_end"></div></div>';
+			      var html='<div class="time"><a href="" class="title_link">mark jquery é“¾å¼è°ƒç”¨çš„jsåŸç†</a><div><span class="wtime newfont">2015/01/01</span><span class="mark newfont">javascript,html</span></div></div>';
+                  html+='<div class="article_body">æ‘˜è¦: æˆ‘ä»¬åœ¨ä½¿ç”¨jqueryçš„æ—¶å€™ä¼šç”¨åˆ°ç±»ä¼¼$("#id").css("color","red").show(200); è¿™æ ·å†™æœ‰ç‚¹å‡å°‘ä»£ç é‡ï¼Œå‡å°‘äº†é€æ­¥æŸ¥è¯¢DOMçš„æ€§èƒ½æŸè€—ï¼›'; 
+				  html+='js åŸç†å®ç°ï¼š function demo(){}demo.prototype={ first:function...<a href="#" class="more" title="æŸ¥çœ‹æ›´å¤š">more</a></div><div class="article_end"></div></div>';
 				  div.innerHTML=html;
 				  fragment.appendChild(div);
 				 }
@@ -97,6 +96,7 @@ window.onload=function(){
 				loadMore.style.display="none";
 
         });
+    }
 
-//°Ù¶È·ÖÏí¹¦ÄÜÊµÏÖ
-window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"174.5"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"·ÖÏíµ½£º","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+//ç™¾åº¦åˆ†äº«åŠŸèƒ½å®ç°
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"174.5"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"åˆ†äº«åˆ°ï¼š","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];

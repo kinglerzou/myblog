@@ -292,8 +292,9 @@ body{
    margin-left:1em;
    margin-top:1em;
    float:left;
-   line-height:5em
+   height:31px;
   }
+  .flogo a{display:block}
   .flogo:hover{
      margin-left:1.5em
   }

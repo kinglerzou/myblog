@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Author" content="kingler/zou">
+	<meta name="Keywords" content="front-end">
+	<meta name="Description" content="the technology of front-end">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/article.css">
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+	<title>kingler's blog|coding change the world</title>
+</head>
+<body class="kingler article_main">
+	<div class="header">
+		<div class="logo">
+			<div class="info">	
+				<a href="javscript:void(0)" class="display">
+					<img src="../img/logonew.jpg" alt="front-end" style="height:5em;"/>
+				</a>
+				<span>当前位置:<span><span class="city"></span>
+			</div>
+			<div class="theme">More Coding More Love
+			</div>
+		</div>
+		<div class="banner shadow">
+			<ul id="navigation">
+				<li>
+					<a href="../main.html">主页</a>	 
+				</li>
+				<li>
+					<a href="javascript:void(0)">杂谈</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">随笔</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">个人</a>
+				</li>
+			</ul>
+			
+		</div>
+	</div>
+	<div class="article">
+		<div class="article_left">
+		<img src="../img/imgone.jpg" alt="load fail..." width="419"/>
+		</div>
+		<div class="article_right">
+		
+		<h1>javascript一些算法实现</h1>
+
+		<p>算法（Algorithm）是指解题方案的准确而完整的描述，是一系列解决问题的清晰指令，算法代表着用系统的方法描述解决问题的策略机制。也就是说，能够对一定规范的输入，在有限时间内获得所要求的输出。如果一个算法有缺陷，或不适合于某个问题，执行这个算法将不会解决这个问题。不同的算法可能用不同的时间、空间或效率来完成同样的任务。一个算法的优劣可以用空间复杂度与时间复杂度来衡量。</p>
+		<hr>
+		<h3>一、约瑟夫环实现</h3>
+<pre class="code"> <span style="color: #008000;">//</span><span style="color: #008000;">附有调试</span>
+ <span style="color: #0000ff;">function</span><span style="color: #000000;"> joseph(n,p){
+        <span style="color: #0000ff;">var</span> arr=<span style="color: #000000;">[];
+</span>    <span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">var</span> i=0;i&lt;n;i++<span style="color: #000000;">){
+</span> <span style="color: #000000;">        arr.push(i);
+</span> <span style="color: #000000;">     }
+</span>     <span style="color: #0000ff;">debugger</span><span style="color: #000000;">;
+</span>      <span style="color: #0000ff;">var</span> flag=0<span style="color: #000000;">;
+</span>     <span style="color: #0000ff;">var</span> outnum=0<span style="color: #000000;">;
+</span>     <span style="color: #0000ff;">while</span>(arr.length&gt;1<span style="color: #000000;">){
+</span>     <span style="color: #008000;">//</span><span style="color: #008000;">定义到里面 下次外层循环，数组长度已改变，定义到外面的话会死循环，浏览器卡死</span>
+     <span style="color: #0000ff;">var</span> len=<span style="color: #000000;">arr.length;
+</span>    <span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">var</span> i=0;i&lt;len;i++<span style="color: #000000;">){
+</span>       flag++<span style="color: #000000;">;
+</span>        <span style="color: #0000ff;">if</span>(flag==<span style="color: #000000;">p){
+</span>          flag=0<span style="color: #000000;">;
+</span>          <span style="color: #008000;">//</span><span style="color: #008000;">自行脑补</span>
+           arr.splice(i-outnum,1<span style="color: #000000;">);
+</span>        outnum++<span style="color: #000000;">;
+</span> <span style="color: #000000;">    }
+</span><span style="color: #000000;">   }
+</span> <span style="color: #000000;">}
+</span> <span style="color: #0000ff;">return</span> arr[0<span style="color: #000000;">];
+</span> <span style="color: #000000;">}
+</span> <span style="color: #008000;">//</span><span style="color: #008000;">IE8以下不支持console.log()</span>
+ <span style="color: #0000ff;">if</span><span style="color: #000000;">(window.console){
+</span>   console.log(joseph(20,3<span style="color: #000000;">));
+</span> <span style="color: #000000;">}
+</span> <span style="color: #0000ff;">else</span><span style="color: #000000;">{
+</span>    window.console=<span style="color: #000000;">{
+</span>        log:<span style="color: #0000ff;">function</span><span style="color: #000000;">(){},
+</span>        happentime:<span style="color: #0000ff;">function</span><span style="color: #000000;">(){}
+</span>       <span style="color: #008000;">//</span><span style="color: #008000;">对象字面量方式自行构建</span>
+ <span style="color: #000000;">  }
+</span> }</pre>
+<h3> 二、数组去重</h3>
+<pre class="code"><span style="color: #0000ff;">var</span> ss=[1,2,3,3,44,55,55,77,2,3,1<span style="color: #000000;">];
+ <span style="color: #0000ff;">function</span><span style="color: #000000;"> decode2(){
+      <span style="color: #0000ff;">var</span> arry=<span style="color: #000000;">{};
+     <span style="color: #0000ff;">var</span> index=0<span style="color: #000000;">;
+    <span style="color: #0000ff;">var</span> ss2=<span style="color: #000000;">[];
+      <span style="color: #0000ff;">var</span> len=<span style="color: #000000;">ss.length;
+    <span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">var</span> i=0;i&lt;len;i++<span style="color: #000000;">){
+        <span style="color: #0000ff;">if</span>(arry[ss[i]]==<span style="color: #000000;">undefined){
+
+      arry[ss[i]]=1<span style="color: #000000;">;
+      ss2[index++]=<span style="color: #000000;">ss[i];
+<span style="color: #000000;">   }
+     <span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span>(arry[ss[i]==1]){<span style="color: #0000ff;">continue</span><span style="color: #000000;">;}
+ <span style="color: #000000;">}
+  <span style="color: #0000ff;">return</span><span style="color: #000000;"> ss2
+ <span style="color: #000000;">}
+ decode2();</pre>
+<h3> 三、实现一个函数，判断一个字符串内出现最多次的字符，并统计这个字符</h3>
+<pre class="code"> <span style="color: #0000ff;">var</span>  s="helloworld"<span style="color: #000000;">;
+ <span style="color: #0000ff;">function</span><span style="color: #000000;"> countStr(str){
+      <span style="color: #0000ff;">var</span> len=<span style="color: #000000;">str.length;
+      <span style="color: #0000ff;">var</span> obj=<span style="color: #000000;">{}; 
+      <span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">var</span> i=0;i&lt;len;i++<span style="color: #000000;">){
+        <span style="color: #0000ff;">var</span> k=<span style="color: #000000;">str.charAt(i);
+       <span style="color: #0000ff;">if</span><span style="color: #000000;">(obj[k]){
+        obj[k]++<span style="color: #000000;">;
+ <span style="color: #000000;">}
+ <span style="color: #0000ff;">else</span>
+ <span style="color: #000000;">{
+      obj[k]=1<span style="color: #000000;">;
+ <span style="color: #000000;">}
+ <span style="color: #000000;">}
+    <span style="color: #0000ff;">var</span> m=0,i=<span style="color: #0000ff;">null</span><span style="color: #000000;">;
+    <span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">var</span> b <span style="color: #0000ff;">in</span><span style="color: #000000;"> obj){
+       <span style="color: #0000ff;">if</span>(obj[b]&gt;<span style="color: #000000;">m){
+            m=<span style="color: #000000;">obj[b];
+           i=<span style="color: #000000;">b;
+ <span style="color: #000000;">      }
+<span style="color: #000000;">}
+    <span style="color: #0000ff;">return</span> i+":"+<span style="color: #000000;">m;
+ }   countStr(s);</pre>
+<div>
+  <ul class="comments">
+  
+  </ul>
+</div>
+<div>
+<img src="../img/comment.png"/>
+<textarea class="comment" placeholder="评论一下吧..." rows="5" cols="80"></textarea>
+<span href="" class="submit_comment">确认</span>
+
+</div>
+		</div>
+	</div>
+	<div class="footer">
+	<div class="copyright">
+		<span>Copyright © 2012-2015 kingler/zou.  All Rights Reserved</span>
+	</div>
+	</div>
+	<a href="#top" class="u-backtop e-backtop-fixed">
+		<span class="u-icon i-backtop">
+		</span>
+	</a> 
+	<script type="text/javascript" src="../js/EventUtil.js"></script>
+	 <script type="text/javascript" 
+     src="http://api.map.baidu.com/api?v=2.0&ak=s8O5mNPm39Gl0ZuYxMdxPQX1"></script>
+	 	 <script type="text/javascript" 
+     src="../js/common.js"></script>
+       </body>
+       </html>

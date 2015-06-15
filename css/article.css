@@ -36,8 +36,29 @@ left:0
   background:#f5f5f5;
      text-indent:0;
 	 padding-left:1em;
+	 font-size:1.4em;
 }
 
+.angularjs_one{
+background-color:#f5f5f5;
+border:1px solid #eee;
+font-size:1.4em;
+margin-left:1em;
+padding:1em;
+}
+.angularjs_one a{
+ color:red;
+}
+.angularjs_one form{
+  margin-top:1em
+}
+.angularjs_one input[type="submit"]{
+  padding:2px;
+}
+.done-true{
+  color:grey;
+  text-decoration:line-through;
+}
 
 .comment{
   margin:10px 10px 0 10px;

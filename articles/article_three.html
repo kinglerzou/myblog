@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Author" content="kingler/zou">
+	<meta name="Keywords" content="front-end">
+	<meta name="Description" content="the technology of front-end">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/article.css">
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="../js/angular.js"></script>
+	<script type="text/javascript" src="../js/todo.js"></script>
+	<script type="text/javascript" src="../js/EventUtil.js" async defer></script>
+	<title>kingler's blog|coding change the world</title>
+</head>
+<body class="kingler article_main">
+	<div class="header">
+		<div class="logo">
+			<div class="info">	
+				<a href="../MyBlog.html" class="display">
+					<img src="../img/logonew.jpg" alt="front-end" style="height:5em;"/>
+				</a>
+				<span>当前位置:<span><span class="city"></span>
+			</div>
+			<div class="theme">More Coding More Love
+			</div>
+		</div>
+		<div class="banner shadow">
+			<ul id="navigation">
+				<li>
+					<a href="../main.html">主页</a>	 
+				</li>
+				<li>
+					<a href="javascript:void(0)">杂谈</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">随笔</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">个人</a>
+				</li>
+			</ul>
+			
+		</div>
+	</div>
+	<div class="article">
+		<div class="article_left">
+		<img src="../img/imgtwo.jpg" alt="load failed..." width="419"/>
+		</div>
+		<div class="article_right">
+		<h1>Angularjs Demo</h1>
+		<p>&nbsp;&nbsp类库 - 类库是一些函数的集合，它能帮助你写WEB应用。起主导作用的是你的代码，由你来决定何时使用类库。类库有：jQuery等<br/>
+           &nbsp;&nbsp框架 - 框架是一种特殊的、已经实现了的WEB应用，你只需要对它填充具体的业务逻辑。这里框架是起主导作用的，由它来根据具体的应用逻辑来调用你的代码。框架有：knockout、sproutcore等。<br/>
+           &nbsp;&nbsp;AngularJS使用了不同的方法，它尝试去补足HTML本身在构建应用方面的缺陷。AngularJS通过使用我们称为标识符(directives)的结构，让浏览器能够识别新的语法。例如：<br/>
+           &nbsp;&nbsp使用双大括号{{}}语法进行数据绑定；<br/>
+           &nbsp;&nbsp使用DOM控制结构来实现迭代或者隐藏DOM片段；<br/>
+           &nbsp;&nbsp支持表单和表单的验证；<br/>
+           &nbsp;&nbsp能将逻辑代码关联到相关的DOM元素上；<br/>
+           &nbsp;&nbsp能将HTML分组成可重用的组件。<br/>
+		</p>
+		<hr>
+<h3>一、html界面</h3>
+<pre class="code">
+	<span style="color: #0000ff;">&lt;!</span><span style="color: #ff00ff;">doctype html</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">html </span><span style="color: #ff0000;">lang</span><span style="color: #0000ff;">="en"</span><span style="color: #ff0000;"> ng-app</span><span style="color: #0000ff;">="todoApp"</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">meta </span><span style="color: #ff0000;">charset</span><span style="color: #0000ff;">="UTF-8"</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">meta </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="Generator"</span><span style="color: #ff0000;"> content</span><span style="color: #0000ff;">="EditPlus®"</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">meta </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="Author"</span><span style="color: #ff0000;"> content</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">meta </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="Keywords"</span><span style="color: #ff0000;"> content</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">meta </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="Description"</span><span style="color: #ff0000;"> content</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">script </span><span style="color: #ff0000;">src</span><span style="color: #0000ff;">="js/angular.js"</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">script </span><span style="color: #ff0000;">src</span><span style="color: #0000ff;">="js/todo.js"</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;</span>Angularjs<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">style </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="text/css"</span><span style="color: #0000ff;">&gt;</span><span style="background-color: #f5f5f5; color: #800000;">
+	.done-true</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+	text-decoration</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">line-through</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+	color</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">grey</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+	<span style="background-color: #f5f5f5; color: #000000;">}</span>
+	<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">style</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">ng-controller</span><span style="color: #0000ff;">="TodoListController as todoList"</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">span</span><span style="color: #0000ff;">&gt;</span>{{todoList.remaining()}} of {{todoList.todocs.length}} remaining<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">span</span><span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+	[</span><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #ff0000;"> ng-click</span><span style="color: #0000ff;">="todoList.archive()"</span><span style="color: #0000ff;">&gt;</span>archive<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span><span style="color: #000000;">]
+	</span><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ul</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">li </span><span style="color: #ff0000;">ng-repeat</span><span style="color: #0000ff;">="todo in todoList.todocs"</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">input </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="checkbox"</span><span style="color: #ff0000;"> ng-model</span><span style="color: #0000ff;">="todo.done"</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">span </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="done-{{todo.done}}"</span><span style="color: #0000ff;">&gt;</span>{{todo.text}}<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">span</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">ul</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">form </span><span style="color: #ff0000;">ng-submit</span><span style="color: #0000ff;">="todoList.addTodo()"</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">input </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="text"</span><span style="color: #ff0000;"> placeholder</span><span style="color: #0000ff;">="add new todo here"</span><span style="color: #ff0000;"> ng-model</span><span style="color: #0000ff;">="todoList.todoText"</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">input </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="submit"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="add"</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">form</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+	<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">html</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<h3> 二、js实现</h3>
+<pre class="code">
+angular.module('todoApp'<span style="color: #000000;">,[])
+.controller(</span>'TodoListController',<span style="color: #0000ff;">function</span><span style="color: #000000;">(){
+	</span><span style="color: #0000ff;">var</span> todoList=<span style="color: #0000ff;">this</span><span style="color: #000000;">;
+	todoList.todocs</span>=[{text:'learn angular',done:<span style="color: #0000ff;">true</span>},{text:'build an angular app',done:<span style="color: #0000ff;">true</span><span style="color: #000000;">}];
+	todoList.addTodo</span>=<span style="color: #0000ff;">function</span><span style="color: #000000;">(){
+	todoList.todocs.push({text:todoList.todoText,done:</span><span style="color: #0000ff;">false</span><span style="color: #000000;">});
+	todoList.todoText</span>=''<span style="color: #000000;">;
+	};
+	todoList.remaining</span>=<span style="color: #0000ff;">function</span><span style="color: #000000;">(){
+	</span><span style="color: #0000ff;">var</span> count=0<span style="color: #000000;">;
+	angular.forEach(todoList.todocs,</span><span style="color: #0000ff;">function</span><span style="color: #000000;">(todo){
+	count</span>+=todo.done?0:1<span style="color: #000000;">;
+	});
+	</span><span style="color: #0000ff;">return</span><span style="color: #000000;"> count;
+	};
+	todoList.archive</span>=<span style="color: #0000ff;">function</span><span style="color: #000000;">(){
+	</span><span style="color: #0000ff;">var</span> oldTodocs=<span style="color: #000000;">todoList.todocs;
+	todoList.todocs</span>=<span style="color: #000000;">[];
+	angular.forEach(oldTodocs,</span><span style="color: #0000ff;">function</span><span style="color: #000000;">(todo){
+	</span><span style="color: #0000ff;">if</span>(!<span style="color: #000000;">todo.done) todoList.todocs.push(todo);
+	});
+
+	};
+	});</span>
+</pre>
+<h3> 三、实例</h3>
+<div ng-app="todoApp" class="angularjs_one">
+  <div ng-controller="TodoListController as todoList">
+		<span>{{todoList.remaining()}} of {{todoList.todocs.length}} remaining</span>
+		[<a href="" ng-click="todoList.archive()">archive</a>]
+	<ul>
+		<li ng-repeat="todo in todoList.todocs">
+		  <input type="checkbox" ng-model="todo.done">
+		  <span class="done-{{todo.done}}">{{todo.text}}</span>
+		</li>
+	</ul>
+	<form ng-submit="todoList.addTodo()">
+	 <input type="text" placeholder="add new todo here" ng-model="todoList.todoText">
+	 <input type="submit" value="add">
+	</form>
+  </div>
+</div>
+<div>
+  <ul class="comments">
+  
+  </ul>
+</div>
+<div>
+<img src="../img/comment.png"/>
+<textarea class="comment" placeholder="评论一下吧..." rows="5" cols="80"></textarea>
+<span href="" class="submit_comment">确认</span>
+
+</div>
+		</div>
+	</div>
+	<div class="footer">
+	<div class="copyright">
+		<span>Copyright © 2012-2015 kingler/zou.  All Rights Reserved</span>
+	</div>
+	</div>
+	<a href="#top" class="u-backtop e-backtop-fixed">
+		<span class="u-icon i-backtop">
+		</span>
+	</a> 
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=s8O5mNPm39Gl0ZuYxMdxPQX1"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+</body>
+</html>

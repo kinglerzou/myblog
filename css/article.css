@@ -63,6 +63,8 @@ padding:1em;
 .comment{
   margin:10px 10px 0 10px;
   font-size:1.4em;
+  padding:.5em;
+  border-radius:.2em;
 }
 .submit_comment{
 	width:30px;

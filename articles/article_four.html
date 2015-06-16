@@ -56,10 +56,10 @@
 		<h1>javascript 继承 Demo</h1>
 		<p>&nbsp;&nbsp原型链的继承，直接将子类原型指向超类的实例，这时候可以向超类传递参数。但是当子类创建实例的时候，只能向子类的构造函数传递参数，而不能向超类的构造函数传递参数
            &nbsp;&nbsp借用构造函数继承也不是完美的，继承依赖构造函数，方法都是在构造函数中定义的话，函数就无法复用造成浪费。而且在超类的原型中定义的方法，对子类而言也是不可见的，结果所有的类型最后都只能使用构造函数模式。
-              因此实际应用中，也很少单独使用借用构造函数和原型链的继承。用组合继承的方式；
+              因此实际应用中，也很少单独使用借用构造函数和原型链的继承。用组合继承的方式:组合继承就是将原型链和借用构造函数的方法组合到一起，从而组合使用两者的长处，解决缺陷。思路也很简单：使用原型链实现对圆形属性和方法的继承，而通过借用构造函数来实习对实例属性的继承。
 		</p>
 		<hr>
-<h3>一、html界面</h3>
+<h3>组合继承代码/h3>
 <pre class="code">
 	<span style="color: #0000ff;">&lt;!</span><span style="color: #ff00ff;">doctype html</span><span style="color: #0000ff;">&gt;</span>
 	<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">html </span><span style="color: #ff0000;">lang</span><span style="color: #0000ff;">="en"</span><span style="color: #ff0000;"> ng-app</span><span style="color: #0000ff;">="todoApp"</span><span style="color: #0000ff;">&gt;</span>

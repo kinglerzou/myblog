@@ -101,10 +101,18 @@ padding:1em;
 .nav_href{
 margin:10em 0 0 25em;
 }
-.nav_toc{
+.nav_toc strong{
+  background-color:#33BBBA;
+  padding:0 20px
+}
+.nav_toc p{
    font-weight:bold;
-   border:1px solid #ccc;
    padding:.5em 1em;
+   font-size:1.5em
+}
+.nav_toc{
+   border:1px solid #ccc;
+   padding-top:.5em;
 }
 .nav_ol{
    border:1px solid #ccc;
@@ -114,8 +122,8 @@ margin:10em 0 0 25em;
    margin-bottom:1em
 }
 .nav_ol li a{
-   color:#333;
-   font-size:0.9em
+   color:#2980b9;
+   font-size:1.3em
 }
 .nav_ol li a:hover{
    text-decoration:none

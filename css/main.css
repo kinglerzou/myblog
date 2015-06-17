@@ -89,7 +89,14 @@ body{
   }
   .day{
     margin-top:1em;
-  }   
+	border-bottom:1px #ccc solid;
+	border-left:4px #fff solid;
+	padding-bottom:.5em
+  }
+  .day:hover{
+     border-left-color:#428bca;
+	 background-color:#F8FCFE
+  }
   
   .time{
 /*      background:#67BAD6; */
